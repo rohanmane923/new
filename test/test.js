@@ -1,10 +1,11 @@
-var request = require('supertest');
-var app = require('../index');
+const request = require('supertest');
+const app = require('../index');
 
-describe('GET /', function () {
-  it('should return 200', function (done) {
+describe('GET /', () => {
+  it('should return 200', (done) => {
     request(app)
       .get('/')
       .expect(200, done);
   });
 });
+
