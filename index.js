@@ -1,10 +1,14 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-app.get('/', function (req, res) {
-  res.send('hii');
+app.get('/', (req, res) => {
+  res.status(200).send('Jenkins webhook test');
 });
 
-app.listen(process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 
 module.exports = app;
+
